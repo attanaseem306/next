@@ -14,11 +14,16 @@ import ListGroup from 'react-bootstrap/ListGroup';
 
 export default function Home() {
   console.log(Data);
+  const Blog = (e) => {
+    console.log(e);
+    const copy = [...Data];
+    console.log(copy[e]);
+  }
   return (
    <>
    <div style={{ paddingLeft:15,paddingRight:15 ,display:'inline-flex', display:'flex', justifyContent:'space-evenly',flexWrap:'wrap'}}>
     {
-      Data.map((e)=>{
+      Data.map((e , index)=>{
         return (
           <div className='main' style={{marginTop:20}}>
               <Card style={{ width: '18rem' }}>
@@ -27,7 +32,7 @@ export default function Home() {
                   <Card.Title><h3 style={{fontFamily:'revert-layer'}}>{e.Name}</h3></Card.Title>
                   <Card.Title>{e.class}</Card.Title>
                   <Card.Title>{e.Roll}</Card.Title>
-
+                  <Button onClick={()=> Blog(index)} style={{textAlign:'center'}} variant="primary">Check</Button>
                 </Card.Body>
               </Card> 
               </div>
