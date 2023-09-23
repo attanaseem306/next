@@ -17,7 +17,8 @@ export default function Home() {
   const Blog = (e) => {
     console.log(e);
     const copy = [...Data];
-    console.log(copy[e]);
+    let final=copy[e]
+    // setItem(final,'Value')
   }
   return (
    <>
@@ -25,7 +26,8 @@ export default function Home() {
     {
       Data.map((e , index)=>{
         return (
-          <div className='main' style={{marginTop:20}}>
+          <div key={index} className='main
+          ' style={{marginTop:20}}>
               <Card style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={e.url} />
                 <Card.Body>
@@ -40,9 +42,9 @@ export default function Home() {
       })
     }
    </div>
-   {/* <Link href={'/About'}> <button>About</button></Link>
-   <button>Contact Us</button>
-   <button>Blog</button> */}
+   <Link href={'/About'}> <button>About</button></Link>
+   <Link href={'/Blog'}><button>Blog</button></Link>
+   <button>Con</button>
    </>
   )
 }
