@@ -13,16 +13,16 @@ import ListGroup from 'react-bootstrap/ListGroup';
 // export default ListGroupExample;
 
 export default function Home() {
-  console.log(Data);
-  const Blog = (e) => {
-    console.log(e);
-    const copy = [...Data];
-    let final=copy[e]
+  // console.log(Data);
+  // const Blog = (e) => {
+  //   console.log(e);
+  //   const copy = [...Data];
+  //   let final=copy[e]
     // setItem(final,'Value')
-  }
+  // }
   return (
    <>
-   <div style={{ paddingLeft:15,paddingRight:15 ,display:'inline-flex', display:'flex', justifyContent:'space-evenly',flexWrap:'wrap'}}>
+   {/* <div style={{ paddingLeft:15,paddingRight:15 ,display:'inline-flex', display:'flex', justifyContent:'space-evenly',flexWrap:'wrap'}}>
     {
       Data.map((e , index)=>{
         return (
@@ -41,7 +41,7 @@ export default function Home() {
         )
       })
     }
-   </div>
+   </div> */}
    <Link href={'/About'}> <button>About</button></Link>
    <Link href={'/Blog'}><button>Blog</button></Link>
    <button>Con</button>

@@ -1,30 +1,31 @@
+'use client'
+import Link from 'next/link'
+import dataFetch from  '@/app/UserInfo/UserAllData'
 
- async function dataFetch() {
-    
-  const rest=await fetch('https://jsonplaceholder.typicode.com/users')
-  
-  if (!rest.ok) {  
-      throw new Error("faild")   
-  }
-  return rest.json()
-  }
-  
+export default async function Second() {
+    const fetch = await dataFetch()
 
- export default async function Second() {
-  const fetch=await dataFetch() 
+    return (
+        <div>
+            {
+                fetch.map((val,index) => {
+                    return (
+                <>     
+                <Link href={`/Blog/${val.id}`}>
+                  <div style={{backgroundColor:'black', borderRadius:6, paddingLeft:18, paddingBottom:4}} key={index}>
+                        <div>
+                        <h1 style={{fontSize:18, color:'white'}}>{val.name}</h1>
+                        <h1 style={{fontSize:18, color:'white'}}> {val.email}</h1>
+                        </div>
+                    </div>
+                    </Link>
+                 </>     
+                    )
+                })
 
-  return (
-      <div>
-      {
-       fetch.map((val)=>{
-        return(
-            <h1>{val.id}</h1>
-        )
-       })
-    
-  
-      }
-      </div>
-  )
 
- }
+            }
+        </div>
+    )
+
+}
