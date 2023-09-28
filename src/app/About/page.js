@@ -1,11 +1,12 @@
+import next from "next"
+import context from "react-bootstrap/esm/AccordionContext"
+
 
 function About() {
-    
+
     return(
         <>
-        <div>
-            <h1>About</h1>
-        </div>
+        <h1>About</h1>
         </>
     )
 
